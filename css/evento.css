@@ -1,0 +1,26 @@
+#formEvento{
+    width: 500px;
+    border: solid;
+    border-radius: 3%;
+    padding: 50px;
+}
+#formEvento div label{
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+#formEvento div input{
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+#formEvento div select{
+    font-size: 27px;
+}
+#form button{
+    margin-bottom: 60%;
+    font-size: 25px;
+}
+
+#modalSalvar{
+    transition: 1s;
+}

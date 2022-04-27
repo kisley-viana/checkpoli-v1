@@ -81,5 +81,5 @@
         
         
     </div>
+    <button class="btn btn-primary" onclick="closeSidebar()" id="commander"><<</button>
     <div class="container" id="page">
-        <button class="btn btn-primary" onclick="closeSidebar()" id="commander"><<</button>
