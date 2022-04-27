@@ -1,0 +1,19 @@
+
+#containerBody{
+    margin: 0;  
+    width: 100vw;  
+}
+#containerBody div{
+    height: 100vh;
+    
+}
+#containerBody .row{
+    margin: 0px;
+    float: left;
+   
+}
+
+#sidebar{
+    float: left;
+    transition: 0.5s;
+}
