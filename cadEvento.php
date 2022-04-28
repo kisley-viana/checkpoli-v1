@@ -1,13 +1,24 @@
 <?php
- include('painel.php');
- include('db.php');
+    include('painel.php');
+    include('db.php');
 ?>
+<?php 
+            //Mensagem
+            if(isset($_GET["msg"])){
+                $msg = $_GET["msg"];
+                //$status = $GET["status"];
+                echo '<div class="alert alert-success" role="alert">'.$msg.'</div>';
+            }
+            
+            
+        ?>
 
     <div class="container" align="center">
-        <form id="formEvento">
+        </br>
+        <form id="formEvento" action="cadastroEvento.php" method="POST">
             <div class="mb-3">
-                <label for="nomeEvento" class="form-label"><i class="fas fa-calendar"></i> Nome do Evento:</label>
-                <input type="text" class="form-control" id="nomeEvento" name="nomeEvento">
+                <label for="nome" class="form-label"><i class="fas fa-calendar"></i> Nome do Evento:</label>
+                <input type="text" class="form-control" id="nome" name="nome">
                 <label for="data" class="form-label"><i class="fas fa-calendar-alt"></i> Data do Evento:</label>
                 <input type="date" class="form-control" name="data" id="data" style="width: 16rem; float: left;">
                 <label for="hora" class="form-label"><i class="fas fa-clock"></i> Hora do Evento</label>
@@ -16,12 +27,12 @@
                 <input type="text" class="form-control" id="palestrante" name="palestrante">
                 <label for="tema" class="form-label"><i class="fas fa-flag"></i> Tema do Evento:</label>
                 <select name="tema" id="tema" class="form-control">
-                    <option value="">Selecione</option>
+                    <option value="selecione">Selecione</option>
                 </select>
                 
                 
             </div>
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalSalvar"><i class="fas fa-check"></i> Salvar Evento</button>
+            <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Salvar Evento</button>
             </br>
             </br>
 

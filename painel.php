@@ -11,7 +11,7 @@
     <link href="fontawesome-free-6.1.0-web/css/fontawesome.css" rel="stylesheet">
     <link href="fontawesome-free-6.1.0-web/css/brands.css" rel="stylesheet">
     <link href="fontawesome-free-6.1.0-web/css/solid.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/painel.css">
     <title>CheckPoli - Início</title>
 </head>
 <body>
@@ -31,30 +31,36 @@
                 </a>
                 <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <i class="fas fa-home"></i>
-                            <txt id="link"> Eventos</txt>
-                            </a>
+                        <!-- Link Dropdown Evento -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-calendar"></i>&nbsp Evento</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="listaEvento.php"><i class="fas fa-list"></i> Listar Eventos</a></li>
+                                <li><a class="dropdown-item" href="cadEvento.php"><i class="fas fa-calendar-plus"></i> Cadastrar Evento</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-pen-alt"></i> Preencher Planilha de Eventos</a></li>   
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#" class="nav-link text-white" id="link">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                            Dashboard
-                            </a>
+                        <!-- #Link Dropdown Evento -->
+                        <!-- Link Dropdown Temas -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-flag"></i>&nbsp Temas de Eventos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-list"></i> Listar Temas</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-plus-square"></i> Cadastrar Temas</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#" class="nav-link text-white" id="link">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                            Orders
-                            </a>
+                        <!-- #Link Dropdown Temas -->
+                        <!-- Link Dropdown Colaboradores -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-users"></i>&nbsp Colaboradores</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-list"></i> Listar Colaboradores</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-plus-square"></i> Cadastrar Colaborador</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#" class="nav-link text-white" id="link">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                            Products
-                            </a>
-                        </li>
+                        <!-- #Link Dropdown Colaboradores -->
+                        
+                        
                         <li>
                             <a href="#" class="nav-link text-white" id="link">
                                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
@@ -81,5 +87,5 @@
         
         
     </div>
-    <button class="btn btn-primary" onclick="closeSidebar()" id="commander"><<</button>
+    <!-- <button class="btn btn-primary" onclick="closeSidebar()" id="commander"><<</button> -->
     <div class="container" id="page">
