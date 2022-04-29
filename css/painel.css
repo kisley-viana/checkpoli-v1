@@ -4,6 +4,7 @@
     width: 100vw;  
 }
 #containerBody div{
+   
     height: 100vh;
     
 }
@@ -16,4 +17,5 @@
 #sidebar{
     float: left;
     transition: 0.5s;
+   
 }

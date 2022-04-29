@@ -7,7 +7,8 @@
             if(isset($_GET["msg"])){
                 $msg = $_GET["msg"];
                 //$status = $GET["status"];
-                echo '<div class="alert alert-success" role="alert">'.$msg.'</div>';
+                //echo '<div class="alert alert-success" role="alert">'.$msg.'</div>';
+                echo $msg;
             }
             
             

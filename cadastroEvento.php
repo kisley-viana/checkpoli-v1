@@ -11,15 +11,18 @@ include('db.php');
         
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-        $msg="Cadastrado com sucesso!";
-        $status="true";
+       
+       // $msg="Cadastrado com sucesso!";
+       $msg='<div class="alert alert-success" role="alert">Cadastrado com Sucesso!</div>';
+        //$status="true";
         header("location: cadEvento.php?msg=".$msg);
         
 
     }catch(PDOException $e){
-        $msg="Erro ao cadastrar!";
-        $status="false";
-        header("location: cadEvento.php?msg=".$msg."status=".$status);
+        //$msg="Erro ao cadastrar!";
+        $msg='<div class="alert alert-danger" role="alert">Erro ao cadastrar</div>';
+        //$status="false";
+        header("location: cadEvento.php?msg=".$msg);
         echo 'ERRO:'.$e->getMessage();
 
         
