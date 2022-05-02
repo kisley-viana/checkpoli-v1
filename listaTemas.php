@@ -1,21 +1,24 @@
 <?php
-    include('painel.php');
-    include('db.php');
 
+include('painel.php');
+include('db.php');
 
-    
-        
-        //Lista de eventos
-        
-        //$lista= $conn->query("SELECT * FROM evento ORDER BY data DESC  tema.nome INNER JOIN tema ON evento.tema = tema.id");
-        $lista= $conn->query("SELECT `id`,`nome`,`tema.nome`,`data`,`hora`,`palestrante` FROM `evento` INNER  JOIN `tema` ON `evento.tema` = `tema.id`");
-        
-        //Contador
-        $stmt=$conn->query("SELECT COUNT(*) FROM evento");
+            //Lista de temas
+        $lista= $conn->query("SELECT * FROM tema ORDER BY nome ASC");
+            //Contador de Linhas
+        $stmt=$conn->query("SELECT COUNT(*) FROM tema");
         $cont = $stmt->fetchColumn();
         $conn = null;
+
+
+        
+            
 ?>
-<?php 
+
+
+
+<div class="container">
+        <?php
             //Mensagem
             if(isset($_GET["msg"])){
                 $msg = $_GET["msg"];
@@ -23,13 +26,9 @@
                 //echo '<div class="alert alert-success" role="alert">'.$msg.'</div>';
                 echo $msg;
             }
-            
-            
         ?>
-
-        <div class="container">
             </br>
-            <h1><i class="fas fa-list"></i> Lista de Eventos</h1>
+            <h1><i class="fas fa-flag"></i> Lista Temas</h1>
                
             </br>
             <table class="table">
@@ -41,10 +40,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Código</th>
-                        <th scope="col">Nome do Evento</th>
-                        <th scope="col">Tema do Evento</th>
-                        <th scope="col">Data do Evento</th>
-                        <th scope="col">Hora</th>
+                        <th scope="col">Nome do Tema</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -55,13 +51,10 @@
                         
                             echo "<th scope='row'>".$dados['id']."</th>"; 
                             echo "<td>".$dados['nome']."</td>";
-                            echo "<td>".$dados['tema']."</td>";
-                            echo "<td>".$dados['data']."</td>";
-                            echo "<td>".$dados['hora']."</td>";
                             echo "<td>
                                 <button class='btn' style='color: darkblue; font-size: 19px'><i class='fas fa-print'></i></button>
                                 <button class='btn' style='color: teal; font-size: 19px'><i class='fas fa-pencil-alt'></i></button>
-                                <button class='btn' style='color: red; font-size: 19px' onclick='deletarEvento(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' id='deletar".$dados['id']."' codigo='".$dados['id']."'><i class='fas fa-trash-alt'></i></button>
+                                <button class='btn' style='color: red; font-size: 19px' onclick='deletarTema(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' id='deletar".$dados['id']."' codigo='".$dados['id']."'><i class='fas fa-trash-alt'></i></button>
                             </td>";
                         echo "</tr>";
                     } ?>
@@ -80,8 +73,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="deleteEvento.php" method="GET">
-                    <input type="hidden" id="codigoEvento" value="" name="codigo">
+                    <form action="deletarTema.php" method="GET">
+                    <input type="hidden" id="codigoTema" value="" name="id">
                     Você deseja realmente deletar este Evento?
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -101,12 +94,11 @@
 
 
 
+   
 
 
-        </div>
-    </div>
     <script src="js/painel.js"></script>
-    <script src="js/evento.js"></script>
+    <script src="js/tema.js"></script>
     <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="#" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 CheckPoli
             </a>
         </div>
@@ -46,7 +46,7 @@
                             <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-flag"></i>&nbsp Temas de Eventos</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-list"></i> Listar Temas</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-plus-square"></i> Cadastrar Temas</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTemas"><i class="fas fa-plus-square"></i> Cadastrar Temas</a></li>
                             </ul>
                         </li>
                         <!-- #Link Dropdown Temas -->
@@ -87,5 +87,43 @@
         
         
     </div>
+
+
+    <!-- Modal Temas -->
+    <div class="modal fade" id="modalTemas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-flag"></i> Cadastrar Tema</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="cadTema.php" method="POST">
+            <div class="modal-body">
+                <label for="nome" class="form-label"><i class="fas fa-flag"></i> Nome do Tema:</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Cadastar</button>
+            </div>
+        </form>
+        </div>
+        
+    </div>
+    </div>
+    <!-- #Modal Temas -->
+
+
+
+
+
+
+
+
+
+
+
     <!-- <button class="btn btn-primary" onclick="closeSidebar()" id="commander"><<</button> -->
     <div class="container" id="page">
+    
+    

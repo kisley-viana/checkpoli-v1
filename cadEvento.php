@@ -28,7 +28,13 @@
                 <input type="text" class="form-control" id="palestrante" name="palestrante">
                 <label for="tema" class="form-label"><i class="fas fa-flag"></i> Tema do Evento:</label>
                 <select name="tema" id="tema" class="form-control">
-                    <option value="selecione">Selecione</option>
+                <option value="selecione">Selecione</option>
+                    <?php 
+                        $temas= $conn->query("SELECT * FROM tema ORDER BY nome ASC");
+                        while($tema = $temas->fetch(PDO::FETCH_ASSOC)){
+                            echo "<option value='".$tema['id']."'>".$tema['nome']."</option>";
+                        }
+                    ?>
                 </select>
                 
                 
