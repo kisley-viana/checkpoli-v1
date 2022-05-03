@@ -30,9 +30,9 @@
                 <select name="tema" id="tema" class="form-control">
                 <option value="selecione">Selecione</option>
                     <?php 
-                        $temas= $conn->query("SELECT * FROM tema ORDER BY nome ASC");
+                        $temas= $conn->query("SELECT * FROM tema ORDER BY nome_tema ASC");
                         while($tema = $temas->fetch(PDO::FETCH_ASSOC)){
-                            echo "<option value='".$tema['id']."'>".$tema['nome']."</option>";
+                            echo "<option value='".$tema['id']."'>".$tema['nome_tema']."</option>";
                         }
                     ?>
                 </select>

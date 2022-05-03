@@ -8,7 +8,7 @@
         //Lista de eventos
         
         //$lista= $conn->query("SELECT * FROM evento ORDER BY data DESC  tema.nome INNER JOIN tema ON evento.tema = tema.id");
-        $lista= $conn->query("SELECT `id`,`nome`,`tema.nome`,`data`,`hora`,`palestrante` FROM `evento` INNER  JOIN `tema` ON `evento.tema` = `tema.id`");
+        $lista= $conn->query("SELECT * FROM evento INNER JOIN tema ON evento.tema = tema.id");
         
         //Contador
         $stmt=$conn->query("SELECT COUNT(*) FROM evento");
@@ -55,7 +55,7 @@
                         
                             echo "<th scope='row'>".$dados['id']."</th>"; 
                             echo "<td>".$dados['nome']."</td>";
-                            echo "<td>".$dados['tema']."</td>";
+                            echo "<td>".$dados['nome_tema']."</td>";
                             echo "<td>".$dados['data']."</td>";
                             echo "<td>".$dados['hora']."</td>";
                             echo "<td>

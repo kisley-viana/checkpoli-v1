@@ -45,7 +45,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-flag"></i>&nbsp Temas de Eventos</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-list"></i> Listar Temas</a></li>
+                                <li><a class="dropdown-item" href="listaTemas.php"><i class="fas fa-list"></i> Listar Temas</a></li>
                                 <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTemas"><i class="fas fa-plus-square"></i> Cadastrar Temas</a></li>
                             </ul>
                         </li>

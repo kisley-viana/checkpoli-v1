@@ -4,7 +4,7 @@ include('painel.php');
 include('db.php');
 
             //Lista de temas
-        $lista= $conn->query("SELECT * FROM tema ORDER BY nome ASC");
+        $lista= $conn->query("SELECT * FROM tema ORDER BY nome_tema ASC");
             //Contador de Linhas
         $stmt=$conn->query("SELECT COUNT(*) FROM tema");
         $cont = $stmt->fetchColumn();
@@ -50,10 +50,9 @@ include('db.php');
                     echo"<tr>";
                         
                             echo "<th scope='row'>".$dados['id']."</th>"; 
-                            echo "<td>".$dados['nome']."</td>";
+                            echo "<td>".$dados['nome_tema']."</td>";
                             echo "<td>
-                                <button class='btn' style='color: darkblue; font-size: 19px'><i class='fas fa-print'></i></button>
-                                <button class='btn' style='color: teal; font-size: 19px'><i class='fas fa-pencil-alt'></i></button>
+                                <button class='btn' style='color: teal; font-size: 19px' onclick='editarTema(this)' data-bs-toggle='modal' data-bs-target='#editarModal' idTema=".$dados['id']." nomeTema='".$dados['nome_tema']."'><i class='fas fa-pencil-alt'></i></button>
                                 <button class='btn' style='color: red; font-size: 19px' onclick='deletarTema(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' id='deletar".$dados['id']."' codigo='".$dados['id']."'><i class='fas fa-trash-alt'></i></button>
                             </td>";
                         echo "</tr>";
@@ -87,7 +86,31 @@ include('db.php');
                 </div>
             </div>
             </div>
+            <!-- #Modal Deletar -->
 
+             <!-- Modal Editar -->
+            <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-flag"></i> Cadastrar Tema</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="editarTema.php" method="GET">
+                        <div class="modal-body">
+                            <input type="hidden" id="idTema" value="" name="id">
+                            <label for="nome" class="form-label"><i class="fas fa-flag"></i> Nome do Tema:</label>
+                            <input type="text" class="form-control" id="nometema" name="nometema" value="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Cadastar</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+             </div>
+            <!-- #Modal Editar  -->
 
 
 
