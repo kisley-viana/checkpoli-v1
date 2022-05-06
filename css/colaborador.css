@@ -1,0 +1,22 @@
+#formColaborador{
+    width: 600px;
+    border: solid;
+    border-radius: 3%;
+    padding: 50px;
+}
+#formColaborador div label{
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+#formColaborador div input{
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+#formColaborador div select{
+    font-size: 27px;
+}
+
+#modalSalvar{
+    transition: 1s;
+}

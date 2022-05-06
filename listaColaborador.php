@@ -1,19 +1,8 @@
 <?php
-    include('painel.php');
-    include('db.php');
+include('db.php');
+include('painel.php');
 
 
-    
-        
-        //Lista de eventos
-        
-        //$lista= $conn->query("SELECT * FROM evento ORDER BY data DESC  tema.nome INNER JOIN tema ON evento.tema = tema.id");
-        $lista= $conn->query("SELECT * FROM evento INNER JOIN tema ON evento.tema = tema.id_tema");
-        
-        //Contador
-        $stmt=$conn->query("SELECT COUNT(*) FROM evento");
-        $cont = $stmt->fetchColumn();
-        $conn = null;
 ?>
 <?php 
             //Mensagem
@@ -23,13 +12,22 @@
                 //echo '<div class="alert alert-success" role="alert">'.$msg.'</div>';
                 echo $msg;
             }
+
+
+
+            $lista= $conn->query("SELECT * FROM colaborador INNER JOIN vinculo ON colaborador.vinculo = vinculo.id_vinculo");
+        
+            //Contador
+            $stmt=$conn->query("SELECT COUNT(*) FROM colaborador");
+            $cont = $stmt->fetchColumn();
+            $conn = null;
             
             
         ?>
 
         <div class="container">
             </br>
-            <h1><i class="fas fa-list"></i> Lista de Eventos</h1>
+            <h1><i class="fas fa-users"></i> Lista de Colaboradores</h1>
                
             </br>
             <table class="table">
@@ -40,11 +38,10 @@
                     } ?>
                 <thead>
                     <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome do Evento</th>
-                        <th scope="col">Tema do Evento</th>
-                        <th scope="col">Data do Evento</th>
-                        <th scope="col">Hora</th>
+                        <th scope="col">Matrícula</th>
+                        <th scope="col">Nome do Colaborador</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Vinculo</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -53,15 +50,14 @@
                     
                     echo"<tr>";
                         
-                            echo "<th scope='row'>".$dados['id_evento']."</th>"; 
-                            echo "<td>".$dados['nome']."</td>";
-                            echo "<td>".$dados['nome_tema']."</td>";
-                            echo "<td>".$dados['data']."</td>";
-                            echo "<td>".$dados['hora']."</td>";
+                            echo "<th scope='row'>".$dados['matricula']."</th>"; 
+                            echo "<td>".$dados['nome_colaborador']."</td>";
+                            echo "<td>".$dados['cargo']."</td>";
+                            echo "<td>".$dados['nome_vinculo']."</td>";
                             echo "<td>
-                                <button class='btn' style='color: darkblue; font-size: 19px'><i class='fas fa-eye'></i></button>
-                                <a href='editEvento.php?id=".$dados['id_evento']."'><button class='btn' style='color: teal; font-size: 19px'><i class='fas fa-pencil-alt'></i></button></a>
-                                <button class='btn' style='color: red; font-size: 19px' onclick='deletarEvento(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' id='deletar".$dados['id_evento']."' codigo='".$dados['id_evento']."'><i class='fas fa-trash-alt'></i></button>
+                                
+                                <a href='editColaborador.php?id=".$dados['id']."'><button class='btn' style='color: teal; font-size: 19px'><i class='fas fa-pencil-alt'></i></button></a>
+                                <button class='btn' style='color: red; font-size: 19px' onclick='deletarColaborador(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' codigo='".$dados['id']."'><i class='fas fa-trash-alt'></i></button>
                             </td>";
                         echo "</tr>";
                     } ?>
@@ -70,9 +66,8 @@
             </table>
 
 
-
-            <!-- Modal Deletar-->
-            <div class="modal fade" id="deletarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <!-- Modal Deletar-->
+             <div class="modal fade" id="deletarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -80,9 +75,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="deleteEvento.php" method="GET">
-                    <input type="hidden" id="codigoEvento" value="" name="codigo">
-                    Você deseja realmente deletar este Evento?
+                    <form action="deletarColaborador.php" method="GET">
+                    <input type="hidden" id="codigoVinculo" value="" name="id">
+                        Você deseja realmente deletar este Evento?
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Deletar</button>
@@ -94,19 +89,12 @@
                 </div>
             </div>
             </div>
+            <!-- Modal Deletar -->
 
 
 
-
-
-
-
-
-
-        </div>
-    </div>
     <script src="js/painel.js"></script>
-    <script src="js/evento.js"></script>
+    <script src="js/colaborador.js"></script>
     <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

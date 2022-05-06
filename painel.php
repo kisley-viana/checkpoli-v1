@@ -31,6 +31,15 @@
                 </a>
                 <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
+                    <!-- Link Dropdown Planilhas -->
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-table"></i>&nbsp Planilhas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="listaEvento.php"><i class="fas fa-list"></i> Listar Planilhas</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-pen-alt"></i> Criar e Preencher Planilha</a></li>   
+                            </ul>
+                        </li>
+                        <!-- #Link Dropdown Planilhas -->
                         <!-- Link Dropdown Evento -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-calendar"></i>&nbsp Evento</a>
@@ -54,19 +63,22 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-users"></i>&nbsp Colaboradores</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-list"></i> Listar Colaboradores</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-plus-square"></i> Cadastrar Colaborador</a></li>
+                                <li><a class="dropdown-item" href="listaColaborador.php"><i class="fas fa-list"></i> Listar Colaboradores</a></li>
+                                <li><a class="dropdown-item" href="cadColaborador.php"><i class="fas fa-plus-square"></i> Cadastrar Colaborador</a></li>
                             </ul>
                         </li>
                         <!-- #Link Dropdown Colaboradores -->
                         
                         
-                        <li>
-                            <a href="#" class="nav-link text-white" id="link">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                            Customers
-                            </a>
+                        <!-- Link Dropdown Vinculo -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-briefcase"></i>&nbsp Vínculo</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="listaVinculo.php"><i class="fas fa-list"></i> Listar Vínculos</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalVinculo"><i class="fas fa-plus-square"></i> Cadastrar Vínculo</a></li>
+                            </ul>
                         </li>
+                        <!-- #Link Dropdown Vinculo -->
                     </ul>
                 <hr>
                 <div class="dropdown">
@@ -113,6 +125,29 @@
     </div>
     <!-- #Modal Temas -->
 
+    <!-- Modal Vinculo -->
+    <div class="modal fade" id="modalVinculo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-plus-square"></i> Cadastrar Vinculo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="cadastroVinculo.php" method="POST">
+            <div class="modal-body">
+                <label for="nomeVinculo" class="form-label"><i class="fas fa-flag"></i> Nome do Vinculo:</label>
+                <input type="text" class="form-control" id="nomeVinculo" name="nomeVinculo">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Cadastar</button>
+            </div>
+        </form>
+        </div>
+        
+    </div>
+    </div>
+    <!-- #Modal Vinculo -->
 
 
 

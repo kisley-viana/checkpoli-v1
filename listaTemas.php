@@ -49,11 +49,11 @@ include('db.php');
                     
                     echo"<tr>";
                         
-                            echo "<th scope='row'>".$dados['id']."</th>"; 
+                            echo "<th scope='row'>".$dados['id_tema']."</th>"; 
                             echo "<td>".$dados['nome_tema']."</td>";
                             echo "<td>
-                                <button class='btn' style='color: teal; font-size: 19px' onclick='editarTema(this)' data-bs-toggle='modal' data-bs-target='#editarModal' idTema=".$dados['id']." nomeTema='".$dados['nome_tema']."'><i class='fas fa-pencil-alt'></i></button>
-                                <button class='btn' style='color: red; font-size: 19px' onclick='deletarTema(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' id='deletar".$dados['id']."' codigo='".$dados['id']."'><i class='fas fa-trash-alt'></i></button>
+                                <button class='btn' style='color: teal; font-size: 19px' onclick='editarTema(this)' data-bs-toggle='modal' data-bs-target='#editarModal' idTema=".$dados['id_tema']." nomeTema='".$dados['nome_tema']."'><i class='fas fa-pencil-alt'></i></button>
+                                <button class='btn' style='color: red; font-size: 19px' onclick='deletarTema(this)' data-bs-toggle='modal' data-bs-target='#deletarModal' id='deletar".$dados['id_tema']."' codigo='".$dados['id_tema']."'><i class='fas fa-trash-alt'></i></button>
                             </td>";
                         echo "</tr>";
                     } ?>
