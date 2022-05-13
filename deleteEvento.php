@@ -1,7 +1,7 @@
 <?php
 include('db.php');
 
-$codigo = $_GET['codigo'];
+$id = $_GET['codigo'];
 
 try{
     //$sql = ("DELETE FROM evento WHERE ID = .$codigo.");
@@ -9,7 +9,7 @@ try{
     //$stmt = $conn->prepare($sql);
     //$stmt->execute();
 
-    $sql= $conn->query("DELETE FROM evento WHERE ID = $codigo");
+    $sql= $conn->query("DELETE FROM evento WHERE id_evento = $id");
     $conn = null;
 
 

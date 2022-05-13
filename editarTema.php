@@ -4,7 +4,7 @@ include('db.php');
 $id = $_GET['id'];
 $nometema = $_GET['nometema'];
 try{
-    $sql = "UPDATE `tema` SET `nome_tema` = '$nometema' WHERE `tema`.`id` = $id;";
+    $sql = "UPDATE `tema` SET `nome_tema` = '$nometema' WHERE `tema`.`id_tema` = $id;";
     $stmt=$conn->prepare($sql);
     $stmt->execute();
     $conn = null;
